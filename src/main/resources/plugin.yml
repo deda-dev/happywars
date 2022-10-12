@@ -1,0 +1,6 @@
+name: HappyWars
+version: '${project.version}'
+main: de.deda.happywars.HappyWars
+commands:
+  happywars:
+    aliases: hw

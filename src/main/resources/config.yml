@@ -1,0 +1,251 @@
+#use '&' for the color codes
+#use %PREFIX% for the prefix
+#use %TEAM1-NAME% for the name of the first team
+#use %TEAM2-NAME% for the name of the second team
+
+#Prefix
+Prefix: '&8[&eHappyWars&8]'
+
+#set the no permissions message
+NoPerms: '%PREFIX% &cYou have no permissions!'
+
+#set the wrong command message
+#use %COMMAND% for the right command
+WrongCommandMessage: '%PREFIX% &7Syntax %COMMAND%.'
+
+#set the join message
+#set the quit message
+#use %PLAYER% for the player name
+#use %PLAYERSIZE% for the number of players in the game
+JoinMessage: '%PREFIX% &8[&a+&8] &7The player &a%PLAYER% &7joined the game. &8[&a%PLAYERSIZE%&8/&a10&8]'
+QuitMessage: '%PREFIX% &8[&c-&8] &7The player &c%PLAYER% &7left the game. &8[&c%PLAYERSIZE%&8/&c10&8]'
+
+#set the lobby and ingame world name
+Worlds:
+  lobby: 'world'
+  ingame: 'world'
+
+#set the ingame death heights for players
+DeathHeight:
+  max: 165
+  min: 147
+
+#set the minimum & maximum of players in the game
+MinPlayers: 1
+MaxPlayers: 10
+
+#enable/disable bow spamming
+#set the message when players bow spamm
+#set the bow power when bow spamming is disabled
+#!!IMPORTANT!! set the bow power between 0.0-1; 1 are full power of bow
+BowSpamming:
+  enabled: 'false'
+  message: '%PREFIX% &cBow spamm not allowed'
+BowPower: 0.8
+
+#set the seconds until the game starts
+#set the decreased seconds until the game starts
+#set the message for the decreased countdown
+StartGameSeconds: 100060
+DecreasedSeconds: 2
+DecreasedMessage: '%PREFIX% &7The countdown was reduced to 10 seconds.'
+
+#set the idle message
+#set seconds for repeating the idle message
+#use %MISSING% for the number of missing player for the start of the game
+IdleMessage: '%PREFIX% &7%MISSING% player missing for the start.'
+IdleMessageSeconds: 15
+
+#set the countdown message for the start of the game
+#use %SECONDS% for the seconds number
+CountdownMessage: '%PREFIX% &7%SECONDS% second/s to start the game.'
+
+#set the material & displayname of each join items
+#set the inventory titel & the item for each team
+#set the command when a player leaves the game or the lobby server on which the player is connecting
+#if you set the command to "true", the lobby server will be ignored
+#don't use a "/" befor the command
+#connecting to the lobby server only works on BungeeCord server
+JoinItems:
+  TeamSelection:
+    material: 'BED'
+    displayname: '&l&n&eSelect your team'
+    Inventory:
+      title: '&7&lChoose your team'
+      Items:
+        team1:
+          material: 'WOOL'
+          durability: 14
+          displayname: '&8&lTeam &c&lRed'
+        team2:
+          material: 'WOOL'
+          durability: 11
+          displayname: '&8&lTeam &9&lBlue'
+  LeaveGame:
+    material: 'NETHER_STAR'
+    displayname: '&l&n&fLeave the game'
+    Connection:
+      Command:
+        enabled: false
+        commandType: 'hub'
+      lobbyServer: 'Lobby2'
+  StartGame:
+    material: 'REDSTONE_TORCH_ON'
+    displayname: '&l&n&cStart the game'
+
+#set the name, prefix & chat prefix for each team
+#don't set more than 16 characters for the prefix
+Team1:
+  name: '&cRed'
+  prefix: '&cRed&8&l: &c'
+  chatPrefix: '&8[&cRed&8] &c%PLAYER%&8: &7'
+Team2:
+  name: '&9Blue'
+  prefix: '&9Blue&8&l: &9'
+  chatPrefix: '&8[&9Blue&8] &9%PLAYER%&8: &7'
+Players:
+  prefix: '&a'
+  chatPrefix: '&a%PLAYER%&8: &7'
+
+#set the message to join a team
+#set the message to join a full team
+#use %TEAM% for the team name
+JoinedTeamMessage: '%PREFIX% &7You are joined the team %TEAM%.'
+JoinedFullTeamMessage: '%PREFIX% &7The Team %TEAM% &7are already full.'
+JoinedSameTeamMessage: '%PREFIX% &7You are already in the team %TEAM%.'
+
+#set the amount of respawn points, between 1-9
+#set the respawn area around the core. MIN is the first distance from the core and MAX is the last distance.
+#set the material of the respawn core
+#set the color for captured respawn points each team and neutral respawn points
+#set the name of each respawn point
+#add more by copy the number with name, change the number up to 9
+RespawnPoints:
+  amount: 5
+  radius:
+    min: 2
+    max: 3
+  Core:
+    material: 'BEACON'
+  captured:
+    team1: '&c'
+    team2: '&9'
+  neutral: '&f'
+  1:
+    name: '&fEast 1'
+  2:
+    name: '&fEast 2'
+  3:
+    name: '&fMiddle'
+  4:
+    name: '&fWest 2'
+  5:
+    name: '&fWest 1'
+
+#set the inventory title of the class selection & respawn selection inventory
+#set the material & displayname for the warrior, archer & supporter item
+#set the material & displayname for the fill item in the inventorys
+Inventory:
+  classSelection:
+    title: '&7&lChoose your class'
+    FillItem:
+      material: 'STAINED_GLASS_PANE'
+      durability: 15
+      displayname: ' '
+    WarriorItem:
+      material: 'IRON_SWORD'
+      durability: 0
+      displayname: '&7Warrior'
+    ArcherItem:
+      material: 'BOW'
+      durability: 0
+      displayname: '&7Archer'
+    SupporterItem:
+      material: 'GOLDEN_APPLE'
+      durability: 0
+      displayname: '&7Supporter'
+  spawnSelection:
+    title: '&7&lChoose your respawn point'
+    FillItem:
+      material: 'STAINED_GLASS_PANE'
+      durability: 15
+      displayname: ' '
+    Team1Spawn:
+      material: 'GOLD_BLOCK'
+      durability: 0
+      displayname: '&cRed'
+    Team2Spawn:
+      material: 'GOLD_BLOCK'
+      durability: 0
+      displayname: '&9Blue'
+    respawnPoints:
+      neutral:
+        material: 'WOOL'
+        durability: 0
+        displayname: '%RESPAWNPOINT-NAME%'
+      team1:
+        material: 'WOOL'
+        durability: 14
+        displayname: '&cRed %RESPAWNPOINT-NAME%'
+      team2:
+        material: 'WOOL'
+        durability: 11
+        displayname: '&9Blue %RESPAWNPOINT-NAME%'
+
+#enable/disable the scoreboard for each state
+#set the scoreboard title for each state
+#add lines to the scoreboard
+#the highest number on the top & the lowest on the bottom
+#use blank character for a empty line; add each time one more blank character for a empty line
+#use %TEAM1-NAME% or %TEAM2-NAME% for the team name
+#use %**NUMBER**-RESPAWNPOINT-COLOR% for the color status of a respawn point
+#use %**NUMBER**-RESPAWNPOINT-NAME% for the name of a respawn point
+Scoreboard:
+  Lobby:
+    enabled: true
+    title: '&e&lHappyWars'
+    lines:
+      8: '&7&l➤ &f&lMap&8&l:'
+      7: '&8&l➥ &aGrassland'
+      6: ' '
+      5: '&7&l➤ &f&lMap Builder&8&l:'
+      4: '&8&l➥ &eDennisGenetics'
+      3: '  '
+      2: '&7&l➤ &f&lTeam&8&l:'
+      1: '&8&l➥ &7%TEAM%'
+  Ingame:
+    enabled: true
+    title: '&e&lHappyWars'
+    lines:
+      9: '&c♚ %TEAM1-NAME%Castle'
+      8: '&c==============='
+      7: '%1-RESPAWNPOINT-COLOR%♜ %1-RESPAWNPOINT-NAME%'
+      6: '%2-RESPAWNPOINT-COLOR%♜ %2-RESPAWNPOINT-NAME%'
+      5: '%3-RESPAWNPOINT-COLOR%♜ %3-RESPAWNPOINT-NAME%'
+      4: '%4-RESPAWNPOINT-COLOR%♜ &fWest 2'
+      3: '%5-RESPAWNPOINT-COLOR%♜ %5-RESPAWNPOINT-NAME%'
+      2: '&9==============='
+      1: '&9♚ %TEAM2-NAME%Castle'
+  Ending:
+    enabled: true
+    title: '&e&lHappyWars'
+    lines:
+      5: '&7&l➤ &f&lMap&8&l:'
+      4: '&8&l➥ &7Grassland'
+      3: ' '
+      2: '&7&l➤ &f&lMap Builder&8&l:'
+      1: '&8&l➥ &7DennisGenetics'
+  Spectator:
+    enabled: true
+    title: '&e&lHappyWars'
+    lines:
+      5: '&7&l➤ &f&lMap&8&l:'
+      4: '&8&l➥ &7Grassland'
+      3: ' '
+      2: '&7&l➤ &f&lMap Builder&8&l:'
+      1: '&8&l➥ &7DennisGenetics'
+
+#set the build & premium permission
+Permissions:
+  build: 'happywars.build'
+  premium: 'happywars.premium'
